@@ -7,6 +7,8 @@ Find object values using string keys.
 
 # Usage
 
+Find the value of properties in an object no matter how nested they are.
+
 ```js
 var aspir = require('aspir');
 
@@ -18,7 +20,25 @@ var obj = {
 };
 
 var bar = aspir(obj, 'nested.foo');
-console.log(bar); // prints 'bar'.
+console.log(bar); // Prints 'bar'.
+```
+
+Find the value of arrays in properties by specifying the index.
+
+```js
+var aspir = require('aspir');
+
+var obj = {
+  root: 'root'
+, foo: [
+    'zero'
+  , 'one'
+  , 'two'
+  ]
+};
+
+var one = aspir(obj, 'foo[1]');
+console.log(one); // Prints 'one'.
 ```
 
 # License

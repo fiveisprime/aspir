@@ -19,6 +19,15 @@ describe('#aspir', function() {
     }
   };
 
+  var aobj = {
+    root: 'root'
+  , foo: [
+      'zero'
+    , 'one'
+    , 'two'
+    ]
+  };
+
   it('should find single level nested property values', function() {
     var bar = aspir(obj, 'nested.foo');
 
@@ -35,5 +44,11 @@ describe('#aspir', function() {
     var nested = aspir(lobj, 'nested.very.nested');
 
     expect(nested).toEqual('nested');
+  });
+
+  it('should find array index', function() {
+    var one = aspir(aobj, 'foo[1]');
+
+    expect(one).toEqual('one');
   });
 });
