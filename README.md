@@ -1,4 +1,4 @@
-aspir
+Aspir [![Build Status](https://travis-ci.org/fiveisprime/aspir.png?branch=master)](https://travis-ci.org/fiveisprime/aspir)
 =====
 
 Find object values using string keys.
