@@ -1,6 +1,6 @@
 {
   "maxerr"        : 50,
- 
+
   "bitwise"       : true,
   "camelcase"     : false,
   "curly"         : false,
@@ -15,12 +15,12 @@
   "nonew"         : true,
   "plusplus"      : false,
   "quotmark"      : true,
- 
+
   "undef"         : true,
   "unused"        : true,
   "strict"        : false,
   "trailing"      : true,
- 
+
   "asi"           : false,
   "boss"          : false,
   "debug"         : false,
@@ -28,7 +28,7 @@
   "es5"           : false,
   "esnext"        : false,
   "moz"           : false,
- 
+
   "evil"          : false,
   "expr"          : true,
   "funcscope"     : false,
@@ -46,9 +46,9 @@
   "sub"           : false,
   "supernew"      : false,
   "validthis"     : false,
- 
+
   "node"          : true,
- 
+
   "globals"       : {
     "afterEach"   : false,
     "beforeEach"  : false,
