@@ -16,7 +16,8 @@
   "license": "MIT",
   "devDependencies": {
     "jshint": "~2.1.11",
-    "jasmine-node": "~1.11.0"
+    "should": "~2.1.0",
+    "mocha": "~1.14.0"
   },
   "repository": {
     "type": "git",

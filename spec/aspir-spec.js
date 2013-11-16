@@ -1,6 +1,6 @@
 var aspir = require('../');
 
-describe('#aspir', function() {
+describe('aspir', function() {
 
   var obj = {
     root: 'root'
@@ -28,27 +28,51 @@ describe('#aspir', function() {
     ]
   };
 
-  it('should find single level nested property values', function() {
-    var bar = aspir(obj, 'nested.foo');
+  describe('#exists', function() {
+    it('should return true for values that exist in a single level', function() {
+      aspir.exists(obj, 'root').should.equal(true);
+    });
 
-    expect(bar).toEqual('bar');
+    it('should return true for values that exist nested multiple levels', function() {
+      aspir.exists(obj, 'nested.foo').should.equal(true);
+    });
+
+    it('should return true for array paths that exist', function() {
+      aspir.exists(aobj, 'foo[0]').should.equal(true);
+    });
+
+    it('should return false for values that do not exist', function() {
+      aspir.exists(obj, 'test').should.equal(false);
+    });
+
+    it('should return false for array paths with indexes that do not exist', function() {
+      aspir.exists(aobj, 'foo[7]').should.equal(false);
+    });
   });
 
-  it('should accept an array of properties', function() {
-    var bar = aspir(obj, ['nested', 'foo']);
+  describe('#get', function() {
+    it('should find single level nested property values', function() {
+      var bar = aspir.get(obj, 'nested.foo');
 
-    expect(bar).toEqual('bar');
-  });
+      bar.should.equal('bar');
+    });
 
-  it('should find multiple level nested property values', function() {
-    var nested = aspir(lobj, 'nested.very.nested');
+    it('should accept an array of properties', function() {
+      var bar = aspir.get(obj, ['nested', 'foo']);
 
-    expect(nested).toEqual('nested');
-  });
+      bar.should.equal('bar');
+    });
 
-  it('should find array index', function() {
-    var one = aspir(aobj, 'foo[1]');
+    it('should find multiple level nested property values', function() {
+      var nested = aspir.get(lobj, 'nested.very.nested');
 
-    expect(one).toEqual('one');
+      nested.should.equal('nested');
+    });
+
+    it('should find array index', function() {
+      var one = aspir.get(aobj, 'foo[1]');
+
+      one.should.equal('one');
+    });
   });
 });

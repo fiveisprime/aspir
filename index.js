@@ -6,7 +6,10 @@
 
 var util = require('util');
 
-module.exports = function(obj, path) {
+//
+// Get the value of the specified path on the specified object.
+//
+function get(obj, path) {
   var props = [];
 
   if (util.isArray(path)) {
@@ -34,4 +37,25 @@ module.exports = function(obj, path) {
   }
 
   return obj || null;
+}
+
+//
+// Check for the existence of the specified path on the specified object.
+//
+exports.exists = function exists(obj, path) {
+  if (typeof path === 'string') path = path.split('.');
+
+  if (!util.isArray(path) || path.length === 0) return false;
+  if (typeof obj !== 'object' || !obj) return false;
+
+  var key = path.shift();
+
+  if (/\[[0-9]\]/g.test(key)) return get(obj, key) !== null;
+  if (path.length === 0) return Object.hasOwnProperty.apply(obj, [key]);
+  return exists(obj[key], path);
 };
+
+//
+// Expose the get function.
+//
+exports.get = get;
