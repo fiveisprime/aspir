@@ -1,11 +1,31 @@
 Aspir [![Build Status](https://travis-ci.org/fiveisprime/aspir.png?branch=master)](https://travis-ci.org/fiveisprime/aspir)
 =====
 
-Find object values using string keys.
+Check for and find object values using a string path.
 
 [![NPM](https://nodei.co/npm/aspir.png)](https://nodei.co/npm/aspir/)
 
 # Usage
+
+Check if properties exists based on a string path.
+
+```js
+var aspir = require('aspir');
+
+var obj = {
+  root: 'root'
+, nested: {
+    foo: 'bar'
+  }
+, things: [
+    'one'
+  ]
+};
+
+aspir.exists(obj, 'nested.foo'); // Returns true.
+aspir.exists(obj, 'things[0]');  // Returns true.
+aspir.exists(obj, 'things[1]');  // Returns false.
+```
 
 Find the value of properties in an object no matter how nested they are.
 
@@ -19,7 +39,7 @@ var obj = {
   }
 };
 
-var bar = aspir(obj, 'nested.foo');
+var bar = aspir.get(obj, 'nested.foo');
 console.log(bar); // Prints 'bar'.
 ```
 
@@ -37,7 +57,7 @@ var obj = {
   ]
 };
 
-var one = aspir(obj, 'foo[1]');
+var one = aspir.get(obj, 'foo[1]');
 console.log(one); // Prints 'one'.
 ```
 

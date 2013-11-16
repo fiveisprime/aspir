@@ -1,7 +1,7 @@
 {
   "name": "aspir",
-  "version": "0.0.1",
-  "description": "Find object values using string keys.",
+  "version": "0.1.0",
+  "description": "Check for and find object values using a string path.",
   "main": "index.js",
   "scripts": {
     "test": "make test"
