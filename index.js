@@ -52,6 +52,7 @@ exports.exists = function exists(obj, path) {
 
   if (/\[[0-9]\]/g.test(key)) return get(obj, key) !== null;
   if (path.length === 0) return Object.hasOwnProperty.apply(obj, [key]);
+
   return exists(obj[key], path);
 };
 

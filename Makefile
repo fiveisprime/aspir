@@ -1,4 +1,4 @@
-SRC = index.js
+SRC = index.js spec/aspir-spec.js
 
 test: $(SRC)
 	@node node_modules/.bin/jshint $^
