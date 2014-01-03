@@ -17,7 +17,8 @@
   "devDependencies": {
     "jshint": "~2.1.11",
     "should": "~2.1.0",
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "istanbul": "~0.2.3"
   },
   "repository": {
     "type": "git",
