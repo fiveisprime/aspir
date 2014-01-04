@@ -1,7 +1,5 @@
 var aspir = require('../');
 
-require('should');
-
 describe('aspir', function() {
 
   var obj = {
