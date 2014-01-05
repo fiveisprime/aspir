@@ -1,0 +1,5 @@
+spec
+coverage
+Makefile
+.jshintrc
+.travis.yml
