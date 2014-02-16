@@ -1,4 +1,5 @@
-var aspir = require('../');
+var aspir  = require('../')
+  , expect = require('chai').expect;
 
 describe('aspir', function() {
 
@@ -30,23 +31,23 @@ describe('aspir', function() {
 
   describe('#exists', function() {
     it('should return true for values that exist in a single level', function() {
-      aspir.exists(obj, 'root').should.equal(true);
+      expect(aspir.exists(obj, 'root')).to.equal(true);
     });
 
     it('should return true for values that exist nested multiple levels', function() {
-      aspir.exists(obj, 'nested.foo').should.equal(true);
+      expect(aspir.exists(obj, 'nested.foo')).to.equal(true);
     });
 
     it('should return true for array paths that exist', function() {
-      aspir.exists(aobj, 'foo[0]').should.equal(true);
+      expect(aspir.exists(aobj, 'foo[0]')).to.equal(true);
     });
 
     it('should return false for values that do not exist', function() {
-      aspir.exists(obj, 'test').should.equal(false);
+      expect(aspir.exists(obj, 'test')).to.equal(false);
     });
 
     it('should return false for array paths with indexes that do not exist', function() {
-      aspir.exists(aobj, 'foo[7]').should.equal(false);
+      expect(aspir.exists(aobj, 'foo[7]')).to.equal(false);
     });
   });
 
@@ -54,25 +55,25 @@ describe('aspir', function() {
     it('should find single level nested property values', function() {
       var bar = aspir.get(obj, 'nested.foo');
 
-      bar.should.equal('bar');
+      expect(bar).to.equal('bar');
     });
 
     it('should accept an array of properties', function() {
       var bar = aspir.get(obj, ['nested', 'foo']);
 
-      bar.should.equal('bar');
+      expect(bar).to.equal('bar');
     });
 
     it('should find multiple level nested property values', function() {
       var nested = aspir.get(lobj, 'nested.very.nested');
 
-      nested.should.equal('nested');
+      expect(nested).to.equal('nested');
     });
 
     it('should find array index', function() {
       var one = aspir.get(aobj, 'foo[1]');
 
-      one.should.equal('one');
+      expect(one).to.equal('one');
     });
   });
 });
