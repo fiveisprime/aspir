@@ -1,6 +1,6 @@
 {
   "name": "aspir",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check for and find object values using a string path.",
   "main": "index.js",
   "scripts": {
