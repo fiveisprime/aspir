@@ -31,23 +31,23 @@ describe('aspir', function() {
 
   describe('#exists', function() {
     it('should return true for values that exist in a single level', function() {
-      expect(aspir.exists(obj, 'root')).to.equal(true);
+      expect(aspir.exists(obj, 'root')).to.be.true;
     });
 
     it('should return true for values that exist nested multiple levels', function() {
-      expect(aspir.exists(obj, 'nested.foo')).to.equal(true);
+      expect(aspir.exists(obj, 'nested.foo')).to.be.true;
     });
 
     it('should return true for array paths that exist', function() {
-      expect(aspir.exists(aobj, 'foo[0]')).to.equal(true);
+      expect(aspir.exists(aobj, 'foo[0]')).to.be.true;
     });
 
     it('should return false for values that do not exist', function() {
-      expect(aspir.exists(obj, 'test')).to.equal(false);
+      expect(aspir.exists(obj, 'test')).to.be.false;
     });
 
     it('should return false for array paths with indexes that do not exist', function() {
-      expect(aspir.exists(aobj, 'foo[7]')).to.equal(false);
+      expect(aspir.exists(aobj, 'foo[7]')).to.be.false;
     });
   });
 
