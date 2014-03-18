@@ -48,6 +48,7 @@
   "validthis"     : false,
 
   "node"          : true,
+  "browser"       : true,
 
   "globals"       : {
     "afterEach"   : false,
