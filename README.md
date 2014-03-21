@@ -1,7 +1,7 @@
 Aspir
 =====
 
-[![Build Status](https://travis-ci.org/fiveisprime/aspir.png?branch=master)](https://travis-ci.org/fiveisprime/aspir) [![Dependency Status](https://david-dm.org/fiveisprime/aspir.png?theme=shields.io)](https://david-dm.org/fiveisprime/aspir) [![NPM version](https://badge.fury.io/js/aspir.png)](http://badge.fury.io/js/aspir)
+[![Build Status](https://travis-ci.org/fiveisprime/aspir.svg?branch=master)](https://travis-ci.org/fiveisprime/aspir) [![Dependency Status](https://david-dm.org/fiveisprime/aspir.png?theme=shields.io)](https://david-dm.org/fiveisprime/aspir) [![NPM version](https://badge.fury.io/js/aspir.png)](http://badge.fury.io/js/aspir)
 
 Check for and find object values using a string path.
 
