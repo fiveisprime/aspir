@@ -1,10 +1,10 @@
 //
 //     Aspir
-//     Copyright(c) 2014 Matt Hernandez <matt@modulus.io>
+//     Copyright(c) 2015 Matt Hernandez <matt@modulus.io>
 //     MIT Licensed
 //
 
-(function() {
+void function() {
 
   //
   // Get the value of the specified path on the specified object.
@@ -23,7 +23,7 @@
         , match = /(.+)\[([0-9]*)\]/.exec(prop);
 
       if (match && match.length === 3) {
-        var name  = match[1]
+        var name = match[1]
           , index = match[2];
 
         if (typeof obj[name] !== 'undefined') {
@@ -66,8 +66,8 @@
     module.exports.exists = exists;
   } else {
     window.aspir = {
-      get    : get,
-      exists : exists
+      get: get,
+      exists: exists
     };
   }
-})();
+}();
